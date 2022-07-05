@@ -1,0 +1,7 @@
+<div class="m-3">
+  <h1>Restaurant List</h1>
+  <p><%= link_to "Add a new Restaurant", new_restaurant_path %></p>
+  <% @restaurants.each do |restaurant| %>
+    <p><%=link_to restaurant.name, restaurant_path(restaurant)%></p>
+  <% end %>
+</div>

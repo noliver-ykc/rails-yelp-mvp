@@ -1,0 +1,17 @@
+<div class="m-3">
+  <h1><%= @restaurant.name %></h1>
+  <p><%= @restaurant.address %></p>
+  <p><%= @restaurant.phone_number %></p>
+  <p><%= @restaurant.category.capitalize %></p>
+
+  <% @restaurant.reviews.each do |review| %>
+    <p><% review.rating.times do %>
+      ⭐
+    <% end %>
+    | "<%= review.content %>"</p>
+  <% end %>
+
+ <p><%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %> <br>
+  <%= link_to 'Back', restaurants_path %>
+ </p>
+</div>
